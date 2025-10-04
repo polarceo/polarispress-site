@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Polaris Press — Coming Soon</title>
+  <style>
+    :root{
+      --ink:#e6d3b2;         /* warm beige for headings/buttons */
+      --ink-soft:#e6d3b299;  /* softer beige for body text */
+      --bg:#0e2230;          /* deep blue fallback */
+      --btn:#d9c19b;
+      --btn-text:#0f2230;
+      --ring:#cdb488;
+    }
+
+    /* Full-bleed starry background */
+    body{
+      margin:0;
+      font-family: "Georgia", "Times New Roman", serif;
+      color:var(--ink-soft);
+      min-height:100vh;
+      background:
+        url("./bg-choice1.jpg?v=1") no-repeat center center fixed,
+        var(--bg);
+      background-size:cover;
+    }
+
+    /* dark overlay for readability */
+    .overlay{
+      position:fixed; inset:0;
+      background:linear-gradient(180deg, rgba(14,34,48,.55), rgba(14,34,48,.65));
+    }
+
+    /* centered card */
+    .wrap{
+      position:relative;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding:32px;
+    }
+    .card{
+      width:min(820px, 92vw);
+      background:rgba(14,34,48,.75);
+      border:1px solid rgba(230,211,178,.18);
+      border-radius:16px;
+      padding:36px 28px 30px;
+      box-shadow:0 12px 40px rgba(0,0,0,.35);
+      backdrop-filter:saturate(120%) blur(1.5px);
+      text-align:center;
+    }
+
+    .logo{
+      width:60px;height:60px;margin:0 auto 18px auto; display:block;
+      filter: drop-shadow(0 0 6px #f8e3bb88);
+      animation:glow 3s ease-in-out infinite alternate;
+    }
+    @keyframes glow{
+      from{ filter: drop-shadow(0 0 4px #e6d3b3aa); }
+      to  { filter: drop-shadow(0 0 14px #f8e3bb); }
+    }
+
+    h1{
+      margin:0 0 10px 0;
+      font-size:44px; line-height:1.1;
+      color:var(--ink);
+      letter-spacing:.6px;
+      font-weight:700;
+    }
+    .tag{
+      margin:0 0 18px 0;
+      font-style:italic;
+      font-size:20px;
+      color:var(--ink);
+    }
+    p{ margin:0 0 18px 0; font-size:16px }
+
+    .btnrow{ display:flex; gap:14px; justify-content:center; margin-top:14px; flex-wrap:wrap; }
+    .btn{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      border:1px solid var(--ring);
+      background:var(--btn);
+      color:var(--btn-text);
+      box-shadow:0 6px 14px rgba(0,0,0,.18);
+    }
+    .btn.alt{
+      background:transparent;
+      color:var(--ink);
+      font-weight:600;
+    }
+
+    footer{
+      margin-top:14px; font-size:13px; opacity:.9
+    }
+
+    /* small screens */
+    @media (max-width:480px){
+      h1{ font-size:34px }
+      .tag{ font-size:18px }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <main class="wrap">
+    <section class="card" role="region" aria-label="Coming soon">
+      <img class="logo" src="./boho-star.svg" alt="" />
+      <h1>Polaris Press</h1>
+      <p class="tag">Sacred Practices. Reverent Living. God’s Intentional Design.</p>
+
+      <p>A sacred journey is about to begin. We’re preparing resources, studies, and keepsake
+         experiences that help hearts re-orient toward the North Star.</p>
+      <p>If you’d like to stay connected, reach out below.</p>
+
+      <div class="btnrow">
+        <a class="btn" href="mailto:hello@polarispress.org">hello@polarispress.org</a>
+        <a class="btn alt" href="mailto:team@polarispress.org">Contact the Team</a>
+      </div>
+
+      <footer>© 2025 Polaris Press · polarispress.org</footer>
+    </section>
+  </main>
+</body>
+</html>
